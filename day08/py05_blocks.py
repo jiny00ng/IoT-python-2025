@@ -15,7 +15,8 @@ class Block:
         self.col = col
         self.rect = rect
         self.speed = speed
-        self.dir = random.randint(-45, 45) + 270    # 225 ~ 315
+        # 90이면 위로, 270이면 공이 아래로 -45~45 편차로
+        self.dir = random.randint(-45, 45) + 90    
 
     def move(self): # 볼 무브   
         # 볼이 움직이는 x축 값을 계속 계산하려면 x축은 dir 값을 rad으로 변환 후 cos 처리
@@ -116,13 +117,14 @@ def main():
 
             # 게임클리어, 종료 로직
             if len(BLOCK) == 0: # 볼로 블럭을 다 없앴음.
-                Surface.blit(M_CLEAR, ((SCREEN_WIDTH / 2) - (240 / 2),
+                Surface.blit(M_CLEAR, ((SCREEN_WIDTH / 2) - (400 / 2),
                                         (SCREEN_HEIGHT /2) - (50 / 2)))
                 
             if BALL.rect.centery > 800:
-                Surface.blit(M_FAIL, ((SCREEN_WIDTH / 2) - (240 / 2),
+                Surface.blit(M_FAIL, ((SCREEN_WIDTH / 2) - (300 / 2),
                                         (SCREEN_HEIGHT /2) - (50 / 2)))
                 # is_game_start = False # 게임 종료 후 재시작은 나중에 다시!
+                BALL = Block((200,200,0), Rect(375,650,20,20), 10)  # 공을 새로 생성
 
             BALL.draw_E()
             PADDLE.draw_R()
