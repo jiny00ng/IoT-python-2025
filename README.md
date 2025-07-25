@@ -173,16 +173,16 @@ https://github.com/user-attachments/assets/be51de90-b845-4188-9382-fb134c06d5f4
     - Tkinter 학습
         - 기본 템플릿
 
-        ''' python
+        ``` python
         from tkinter import *
 
         root = Tk()
         # 이 사이에 위젯, 이벤트 등 작성
-        # Label. Button, Entry, Radiobutton
-        # CheckButton, Listbox, Frame 등...
+        # Label, Button, Entry, Radiobutton
+        # Checkbutton, Listbox, Frame 등...
         # 위젯.pack() 필수!
         root.mainloop()
-        '''
+        ```
 
 <!-- 주석 -->
 <!--  html에서 사용하는 <img> 태그로 캡처한 이미지를 추가 -->
